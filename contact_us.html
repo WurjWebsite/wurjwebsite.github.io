@@ -1,28 +1,169 @@
 <!doctype html>
-<html lang='en'>
+<html>
 <head>
-	<title>Contact Us</title>
-	<meta charset='UTF-8'>
-	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	<link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-	<header>
-		<h1>Contact the WURJ team</h1><!--What should we put here for title and text?-->
-		<p>Getting in Touch with the WURJ team by submitting the form</p>
-	<section>
-		<form action=''><!--what do I put here?-->
-			<label for='name'>Name:</label>
-			<input type='text' id='name' name='name' required>
+    <title>Contact Us</title>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='assets/css/main.css'>
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Banner and header background match */
+        .join-wurj-banner {
+            background-color: #624e5d; /* Updated purple color */
+            padding: 100px 20px; /* Tall banner */
+            text-align: center;
+            margin: 0;
+        }
 
-			<label for='name'>Email:</label>
-			<input type='text' id='email' name='email' required> <!--anything else?-->
-    		
-    		<button type='submit'>Join!</button>
-    	</form>
-    </section>
-    <footer>
-    	<a href='index.html'>Back to Mainpage</a>
-    </footer>
+        .join-wurj-title {
+            font-weight: bold;
+            color: #fff; /* White text */
+            font-size: 2.5rem;
+            margin: 60px 0 0 0; /* Title positioning */
+        }
+
+        /* Ensure navigation menu buttons are visible */
+        #header {
+            background-color: #624e5d; /* Same purple as the banner */
+        }
+
+        #nav ul li a {
+            color: #fff; /* White text for nav links */
+        }
+
+        #nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Bring main text closer to the banner */
+        article#main {
+            margin-top: -180px; /* Move text closer to banner */
+        }
+
+        header.special.container {
+            border: none; /* Remove decorative lines */
+            padding: 20px 0; /* Minimal padding for cleaner look */
+        }
+
+        /* Remove horizontal lines above or below text */
+        article#main > header.special.container:before,
+        article#main > header.special.container:after {
+            content: none; /* Prevent pseudo-elements that may create lines */
+        }
+
+        /* Remove extra spacing at the top */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #page-wrapper {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Form Styling */
+        section {
+            margin: -20px auto; /* Center the form */
+            width: 50%; /* Adjust form width */
+            padding: 20px;
+            border: 1px solid #ddd; /* Add a subtle border */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        section label {
+            display: block; /* Place labels on their own line */
+            margin-bottom: 5px;
+        }
+
+        section input[type="text"] {
+            width: 100%; /* Make input fields fill the form width */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        section button[type="submit"] {
+            background-color: #624e5d; /* Match the banner color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        section button[type="submit"]:hover {
+            background-color: #4a3b46; /* Slightly darker on hover */
+        }
+
+        /* Center the form vertically */
+        #main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height:40vh; /* Adjust this value as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page-wrapper">
+        <!-- Header -->
+        <header id="header" class="alt">
+            <h1 id="logo"><a href="index.html"><img src="images/logo.jpg" alt="" /></a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="print_editions.html">Print Editions</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Purple Banner -->
+        <div class="join-wurj-banner">
+            <h2 class="join-wurj-title">Contact the WURJ Team</h2>
+        </div>
+
+        <!-- Main -->
+        <article id="main">
+            <header class="special container">
+            </header>
+            <section>
+                <form action=''><!--what do I put here?-->
+                    <label for='name'>Name:</label>
+                    <input type='text' id='name' name='name' required>
+
+                    <label for='name'>Email:</label>
+                    <input type='text' id='email' name='email' required> <!--   anything else?-->
+            
+                    <button type='submit'>Join!</button>
+                </form>
+            </section>
+        </article>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands circle fa-google-plus-g"><span class="label">Google+</span></a></li>
+                <li><a href="#" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
+                <li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
