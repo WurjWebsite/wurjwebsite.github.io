@@ -3,26 +3,29 @@
 <head>
     <title>News</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
+        /* Banner and header background match (from join.html structure) */
+        /* News-specific banner styling */
         .news-banner {
-            background-color: #624e5d;
-            padding: 100px 20px;
+            background-color: #624e5d; /* Updated purple color */
+            padding: 100px 20px; /* Tall banner */
             text-align: center;
             margin: 0;
         }
 
         .news-title {
             font-weight: bold;
-            color: #fff;
+            color: #fff; /* White text */
             font-size: 2.5rem;
-            margin: 60px 0 0 0;
+            margin: 60px 0 0 0; /* Title positioning */
         }
 
+        /* Ensure navigation menu buttons are visible (from join.html structure) */
         #header {
-            background-color: #624e5d;
+            background-color: #624e5d; /* Same purple as the banner */
         }
 
         #nav ul li a {
@@ -33,23 +36,26 @@
             text-decoration: underline;
         }
 
+        /* Bring main text closer to the banner (consistent with join.html and original news.html) */
         article#main {
-            margin-top: -80px;
+            margin-top: -80px; 
         }
 
+        /* General container styling (from join.html, may not be heavily used by news items directly) */
         header.special.container {
-            border: none;
-            padding: 20px 0;
+            border: none; 
+            padding: 20px 0; 
         }
 
         article#main > header.special.container:before,
         article#main > header.special.container:after {
-            content: none;
+            content: none; 
         }
 
+        /* Remove extra spacing at the top (from join.html) */
         body {
             margin: 0;
-            padding: 0;
+            padding: 0; /* news.html specific padding was in news-wrapper */
         }
 
         #page-wrapper {
@@ -57,13 +63,14 @@
             padding: 0;
         }
 
+        /* Styling for News Content (from original news.html) */
         .news-wrapper {
             max-width: 900px;
             margin: 0 auto;
-            padding: 120px 20px 80px 20px;
+            padding: 120px 20px 80px 20px; /* original news.html had padding here */
         }
 
-        .news-header {
+        .news-header { /* This class wasn't used in the provided news.html body but style is here */
             text-align: center;
             margin-bottom: 60px;
         }
@@ -100,48 +107,61 @@
             line-height: 1.6;
         }
 
-        a {
+        /* General link styling (from original news.html) */
+        article#main a { /* Scoped to article main to avoid affecting header/footer nav if not desired */
             color: #5c3d58;
             text-decoration: underline;
         }
     </style>
 </head>
 
-<body class="is-preload">
+<body class="is-preload"> <!-- Kept from original news.html -->
     <div id="page-wrapper">
 
-        <!-- Header -->
-        <header id="header" class="alt">
-            <h1 id="logo"><a href="index.html"></a></h1>
+        <!-- Header (Structure from join.html) -->
+        <header class="alt" id="header">
+            <h1 id="logo"><a href="index.html"><img alt="" src="images/logo.jpg"/></a></h1>
             <nav id="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="print_editions.html">Print Editions</a></li>
-                  </ul>
+                    <li><a href="contact_us.html">Contact Us</a></li>
+                    <li class="submenu">
+                        <a href="#">Menu</a>
+                        <ul>
+                            <li><a href="board_24_25.html">Current WURJ Board</a></li>
+                            <li><a href="affiliations.html">Affiliations</a></li>
+                            <li><a href="funding.html">Funding</a></li>
+                            <li><a href="guidelines.html">Guidelines</a></li>
+                            <li><a href="join.html">Join</a></li>
+                            <li><a href="mission.html">Mission</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="submissions.html">Submissions</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
         </header>
-           <!-- Purple Banner -->
+
+        <!-- Purple Banner (Content from news.html) -->
         <div class="news-banner">
-            <h2 class="news-title" style="color: #fff;">News</h2>
+            <h2 class="news-title">News</h2> <!-- Removed inline style, handled by .news-title -->
         </div>
 
-        <!-- Main Content -->
+        <!-- Main Content (Content from news.html) -->
         <article id="main">
             <div class="news-wrapper">
-                <!-- News Header -->
-
-
                 <!-- News Items -->
                 <div class="news-item">
                     <h2>Spring 2025 Edition Released!</h2>
                     <div class="date">May 23, 2024</div>
                     <p>We are proud to announce the release of our Spring 2025 edition! Explore new student research in economics, biology, philosophy, and more. Read the latest articles on the <a href="print_editions.html">Print Editions</a> page.</p>
                 </div>
-
+                <!-- Add more news items here if needed -->
             </div>
         </article>
 
-        <!-- Footer -->
+        <!-- Footer (Content from news.html) -->
         <footer id="footer">
             <ul class="icons">
                 <li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
@@ -152,9 +172,10 @@
 
     </div>
 
-    <!-- Scripts -->
+    <!-- Scripts (from join.html / standard template scripts) -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script> <!-- Added if missing from original news but present in join -->
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
