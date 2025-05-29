@@ -7,111 +7,129 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* Added styles to change the color of Home and Menu navigation buttons */
-			#nav ul li.current > a,  /* Targets the Home link */
-		    #nav ul li.submenu > a { /* Targets the Menu link */
-			    color: #624e5d;
+			#header {
+				background-color: #624e5d; 
 			}
 
-			/* Bolded the menu navigation button text */
-			#nav ul li.submenu > a{
+			#nav ul li a {
+				color: #fff; 
+			}
+
+			#nav ul li a:hover {
+				text-decoration: underline;
+			}
+			
+			.print-editions-banner {
+				background-color: #624e5d; 
+				padding: 100px 20px;
+				text-align: center;
+				margin: 0;
+			}
+
+			.print-editions-title {
 				font-weight: bold;
+				color: #fff; 
+				font-size: 2.5rem;
+				margin: 60px 0 0 0; 
+			}
+
+			article#main {
+				margin-top: -80px; /* Move content up under the banner */
+			}
+
+			article#main > header.special.container { /* Target direct child */
+				border: none; 
+				padding: 10px 20px 20px 20px; /* Added more top padding for content after banner */
+				/* The background of this container will be the page default (likely light grey pattern) */
+			}
+
+			article#main > header.special.container p {
+    			font-size: 1.2em; 
+    			line-height: 2;  
+			}
+
+			article#main > header.special.container p a {
+    			font-family: inherit;
+				font-size: inherit;  
+				font-weight: inherit;
+			}
+
+			article#main > header.special.container:before,
+			article#main > header.special.container:after {
+				content: none; 
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			#page-wrapper {
+				margin: 0;
+				padding: 0;
 			}
 		</style>
 	</head>
+	
 	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
-				<header id="header" class="alt">
+			<!-- Header (Standard Site Navigation) -->
+				<header id="header" class="alt"> 
 					<h1 id="logo"><a href="index.html"><img src="images/logo.jpg" alt="" /></a></h1>
-					<nav id="nav">
+					 <nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="print_editions.html">Print Editions</a></li>
+						<li><a href="contact_us.html">Contact Us</a></li>
+						<li class="submenu">
+						<a href="#">Menu</a>
 						<ul>
-							<li class="current"><a href="index.html">Home</a></li>
-							<li class="submenu">
-								<a href="#">Menu</a>
-								<ul>
-									<li class="submenu">
-										<a href="#">Read</a>
-										<ul>
-											<li><a href="#">Print Editions</a></li>
-											<li class="submenu">
-												<a href="#">Online Articles</a>
-												<ul>
-													<li><a href="#">Natural Sciences <br/> and Mathematics</a></li>
-													<li><a href="#">Social Sciences <br/> and Humanities</a></li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li class="submenu">
-										<a href="#">Submissions</a>
-										<ul>
-											<li><a href="#">Submissions</a></li>
-											<li><a href="#">Guidelines</a></li>
-										</ul>
-									</li>
-									<li class="submenu">
-										<a href="#">About</a>
-										<ul>
-											<li><a href="#">Mission</a></li>
-											<li class="submenu">
-												<a href="#">WURJ Board</a>
-												<ul>
-													<li><a href="#">WURJ Board 2023</a></li>
-													<li><a href="#">WURJ Board 2022</a></li>
-													<li><a href="#">WURJ Board 2021</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Faculty Advisory <br/> Board</a></li>
-											<li><a href="#">Affiliations</a></li>
-											<li><a href="#">Funding</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Join</a></li>
-									<li><a href="#">News</a></li>
-									<li><a href="#">Contact Us</a></li>
-								</ul>
-							</li>
-							<li><a href="#" class="button primary">Join</a></li>
+							<li><a href="board_24_25.html">Current WURJ Board</a></li>
+							<li><a href="affiliations.html">Affiliations</a></li>
+							<li><a href="funding.html">Funding</a></li>
+							<li><a href="guidelines.html">Guidelines</a></li>
+							<li><a href="join.html">Join</a></li>
+							<li><a href="mission.html">Mission</a></li>
+							<li><a href="news.html">News</a></li>
+							<li><a href="submissions.html">Submissions</a></li>
 						</ul>
+						</li>
+					</ul>
 					</nav>
 				</header>
 
-			<!-- Main -->
+			<!-- New Purple Banner -->
+			<div class="print-editions-banner">
+				<h2 class="print-editions-title">Print Editions</h2>
+			</div>
+
+			<!-- Main Content -->
 				<article id="main">
-
 					<header class="special container">
-						<h2><strong>WURJ Print Editions</strong></h2>
-					</header>
-
-					<!-- One -->
-						<section class="wrapper style4 container">
-
-							<!-- Content -->
-								<div class="content">
-									<section>
-										<p> Read our print editions here:
-										<br/><a href="pdfs/Vol_5.pdf">Volume V</a><br/>
-										<br/>
-										<a href="pdfs/Vol_4.pdf">Volume IV</a>
-										<br/>
-										<a href="pdfs/Vol_3.pdf">Volume III</a>
-										<br/>
-										<a href="pdfs/Vol_2.pdf">Volume II</a>
-										<br/>
-										<a href="pdfs/Vol_1.pdf">Volume I</a>
-										</p>
-									</section>
-								</div>
-
+						<!-- The "white box with links" goes inside this container -->
+							<div class="content">
+								<section>
+									<p>
+									<br/><a href="pdfs/Vol_5.pdf">Volume V</a>
+									<br/>
+									<a href="pdfs/Vol_4.pdf">Volume IV</a>
+									<br/>
+									<a href="pdfs/Vol_3.pdf">Volume III</a>
+									<br/>
+									<a href="pdfs/Vol_2.pdf">Volume II</a>
+									<br/>
+									<a href="pdfs/Vol_1.pdf">Volume I</a>
+									</p>
+								</section>
+							</div>
 						</section>
-
+					</header>
+				</article>
 
 
 			<!-- Footer -->
 				<footer id="footer">
-
 					<ul class="icons">
 						<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -119,9 +137,7 @@
 						<li><a href="#" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
 						<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>
 					</ul>
-
 				</footer>
-
 		</div>
 
 		<!-- Scripts -->
@@ -134,6 +150,5 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>
