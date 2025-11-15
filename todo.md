@@ -1,6 +1,8 @@
 # WURJ Website Todo
-a
+
 ## Next Steps
+
+0. **change hover color for buttons**
 
 1. **Reduce all the pages to only a few**
    - Consolidate related pages into single pages with tabs/dropdowns
