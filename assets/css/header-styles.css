@@ -1,0 +1,43 @@
+/* Sticky header */
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10000;
+}
+
+/* Add blur/semi-transparent background to Home button */
+#nav ul li.home-button > a {
+	background: rgba(255, 255, 255, 0.075);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	padding: 0.5em 1.5em;
+	border-radius: 0.35em;
+}
+
+/* Add blur/semi-transparent background to Menu button */
+#nav ul li.submenu > a {
+	background: rgba(255, 255, 255, 0.075);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	padding: 0.5em 1.5em;
+	border-radius: 0.35em;
+}
+
+/* Center the dropdown arrow under the Menu text */
+.dropotron.level-0:before {
+	left: 50% !important;
+	transform: translateX(-50%);
+}
+
+/* Add padding to body to account for fixed header */
+body {
+	padding-top: 3.5em;
+}
+
+/* Adjust banner to not have extra space at top */
+#banner {
+	margin-top: -3.5em;
+	padding-top: 3.5em;
+}
