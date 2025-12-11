@@ -1,117 +1,204 @@
 <!DOCTYPE HTML>
-
 <html>
-  <head>
-    <title>Submissions - WURJ</title>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <noscript><link href="assets/css/noscript.css" rel="stylesheet"/></noscript>
-    <style>
-        /* Banner and header background match */
-        .submissions-banner {
-            background-color: #624e5d; /* Updated purple color */
-            padding: 100px 20px; /* Tall banner */
-            text-align: center;
-            margin: 0;
-        }
-        .submissions-title {
-            font-weight: bold;
-            color: #fff; /* White text */
-            font-size: 2.5rem;
-            margin: 60px 0 0 0; /* Title positioning */
-        }
-        /* Ensure navigation menu buttons are visible */
-        #header {
-            background-color: #624e5d; /* Same purple as the banner */
-        }
-        #nav ul li a {
-            color: #fff; /* White text for nav links */
-        }
-        #nav ul li a:hover {
-            text-decoration: underline;
-        }
-        /* Bring main text closer to the banner */
-        article#main {
-            margin-top: -80px; /* Move text closer to banner */
-        }
-        header.special.container {
-            border: none; /* Remove decorative lines */
-            padding: 20px 0; /* Minimal padding for cleaner look */
-        }
-        /* Remove horizontal lines above or below text */
-        article#main > header.special.container:before,
-        article#main > header.special.container:after {
-            content: none; /* Prevent pseudo-elements that may create lines */
-        }
-        /* Remove extra spacing at the top */
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        #page-wrapper {
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-  </head>
-  <body class="submissions-page">
-    <div id="page-wrapper">
-      <!-- Header -->
-      <header class="alt" id="header">
-        <h1 id="logo"><a href="index.html"><img alt="" src="images/logo.jpg"/></a></h1>
-        <nav id="nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="print_editions.html">Print Editions</a></li>
-            <li><a href="contact_us.html">Contact Us</a></li>
-            <li class="submenu">
-              <a href="#">Menu</a>
-              <ul>
-                <li><a href="board_24_25.html">Current WURJ Board</a></li>
-                <li><a href="affiliations.html">Affiliations</a></li>
-                <li><a href="funding.html">Funding</a></li>
-                <li><a href="guidelines.html">Guidelines</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="mission.html">Mission</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="submissions.html">Submissions</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <!-- Purple Banner -->
-      <div class="submissions-banner">
-        <h2 class="submissions-title">Submissions</h2>
-      </div>
-      <!-- Main -->
-      <article id="main">
-        <header class="special container">
-          <p>The submission guidelines can be found in the submission form linked <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBW3FpGSotOMwAXqqhuqWCftLYsQegny57KKD48CRqVBouqA/viewform?usp=sharing" target="_blank">here</a>.</p>
-          <p>Please don’t hesitate to reach out to <strong>akk2</strong> or <strong>glw5</strong> with any questions.</p>
-          <p>We are looking forward to reviewing your submissions and working with you!</p>
-        </header>
-      </article>
-      <!-- Footer -->
-      <footer id="footer">
-        <ul class="icons">
-          <li><a class="icon brands circle fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-          <li><a class="icon brands circle fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
-          <li><a class="icon brands circle fa-google-plus-g" href="#"><span class="label">Google+</span></a></li>
-          <li><a class="icon brands circle fa-github" href="#"><span class="label">Github</span></a></li>
-          <li><a class="icon brands circle fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
-        </ul>
-      </footer>
-    </div>
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+	<head>
+		<title>Submissions & Guidelines - WURJ</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/header-styles.css" />
+		<link rel="stylesheet" href="assets/css/footer-styles.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Constrain banner width */
+			#banner .inner {
+				max-width: 65%;
+			}
+
+			.submissions-content {
+				margin-top: 2em;
+				text-align: left;
+				max-width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.submissions-content section {
+				margin-bottom: 2.5em;
+			}
+
+			.submissions-content h2 {
+				font-weight: bold;
+				color: white;
+				margin-bottom: 1em;
+				font-size: 1.75em;
+			}
+
+			.submissions-content p {
+				color: white;
+				line-height: 1.8;
+				margin-bottom: 1em;
+			}
+
+			.submissions-content em {
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			.submissions-content strong {
+				color: white;
+			}
+
+			.submissions-content a {
+				color: #F0A962;
+				text-decoration: none;
+			}
+
+			.submissions-content a:hover {
+				color: white;
+				text-decoration: underline;
+			}
+
+			.submissions-content table {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 20px 0;
+				background: rgba(255, 255, 255, 0.1);
+			}
+
+			.submissions-content th,
+			.submissions-content td {
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				padding: 12px;
+				text-align: left;
+				vertical-align: top;
+				color: white;
+			}
+
+			.submissions-content th {
+				background-color: rgba(240, 169, 98, 0.3);
+				color: white;
+				font-weight: bold;
+				text-align: center;
+			}
+
+			.submissions-content td:first-child {
+				text-align: center;
+				font-weight: bold;
+			}
+
+			.submissions-content td:last-child {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body class="index is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-placeholder"></div>
+
+			<!-- Banner -->
+				<section id="banner">
+
+					<div class="inner">
+
+						<header>
+							<h2>Submissions & Guidelines</h2>
+						</header>
+						<p>
+						Everything you need to know about
+						<br />
+						submitting your work to WURJ.
+						<br />
+						<br />
+						</p>
+
+						<div class="submissions-content">
+							<!-- Submissions Section -->
+							<section>
+								<h2>Submit Your Work</h2>
+								<p>The submission guidelines can be found in the submission form linked <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBW3FpGSotOMwAXqqhuqWCftLYsQegny57KKD48CRqVBouqA/viewform?usp=sharing" target="_blank">here</a>.</p>
+								<p>Please don't hesitate to reach out to <strong>akk2</strong> or <strong>glw5</strong> with any questions.</p>
+								<p>We are looking forward to reviewing your submissions and working with you!</p>
+							</section>
+
+							<!-- Areas of Study -->
+							<section>
+								<h2>Areas of Study</h2>
+								<p>As the premiere interdisciplinary platform for undergraduate research at Williams, WURJ currently accepts articles in the hard sciences, mathematics (including statistics), social sciences, and humanities. Additionally, all articles must be related to fields covered by one or more <a href="https://www.williams.edu/academics/areas-of-study/" target="_blank">academic departments at Williams College</a>. At this time, WURJ is unable to accept submissions in disciplines not represented at the College.</p>
+							</section>
+
+							<!-- Types of Articles -->
+							<section>
+								<h2>Types of Articles</h2>
+								<p><em>As of this time, we accept three main types of submissions:</em></p>
+								<table>
+									<thead>
+										<tr>
+											<th>Type</th>
+											<th>Description</th>
+											<th>Word Count</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Short Topic Review</td>
+											<td>A short article on a topic, summarizing existing literature with 5–10 relevant citations. The article should be written so that a general audience can understand it, while still providing an accurate overview of the topic.</td>
+											<td>300-1,000 words</td>
+										</tr>
+										<tr>
+											<td>Long Topic Review</td>
+											<td>A thorough and in-depth analysis of the literature on a specific topic referencing 12+ articles. The article should include an introduction with a brief overview of the methodology employed in the review, one or more body paragraphs, and a conclusion summarizing relevant findings.</td>
+											<td>3,000–5,000 words</td>
+										</tr>
+										<tr>
+											<td>Original Research Manuscript</td>
+											<td>A report of findings from an original research project conducted entirely or in part by the author. At minimum, the paper should include an introduction to the topic, a thorough description of the methodologies employed, a presentation of results, and a discussion/conclusion explaining the implications of the research and suggesting future directions. All mentors and/or collaborators in the project should be explicitly named, and manuscripts can only be published with approval from all involved.</td>
+											<td>2,000–5,000 words</td>
+										</tr>
+									</tbody>
+								</table>
+								<p><em>* Note: some submissions (particularly in the social sciences and humanities) may have good reason to deviate from the guidelines laid out above. If this is the case, please <a href="contact_us.html">contact us</a> before submitting your article. *</em></p>
+							</section>
+
+							<!-- Formatting -->
+							<section>
+								<h2>Formatting</h2>
+								<p>We accept submissions as a Google Doc in Times New Roman 12 pt font, double spaced. The document shouldn't include your name or any other identifying information. All long topic reviews and original research manuscripts should include a brief abstract at the start (100 - 150 words) and all submissions should include a concise and informative title. The title should also act as the name of the file, with appropriate capitalization and underscores in place of spaces (e.g. "The Title of My Article"). Figures can be included in the body of the text or as an addendum at the end. All submissions should include organized and appropriate citations for your discipline and should have gone through at least initial editing to avoid grammatical and typographical errors. The word counts listed above are general guidelines, but unless explicitly discussed prior to submission, manuscripts should be no longer than 5,000 words, not including the title, abstract, figure captions, methodology, and citations.</p>
+								<p>If you are unsure about any of these guidelines, please <a href="contact_us.html">contact us</a> prior to the submission.</p>
+							</section>
+
+							<!-- Peer Review -->
+							<section>
+								<h2>Peer Review</h2>
+								<p>All submissions to WURJ are subject to a three stage double blind peer review process. After initial submission, all articles will be reviewed by two or more staff editors and returned to the author(s) with comments. After appropriate alterations have been made, the articles can be resubmitted and a new panel of reviewers will provide feedback. This process will be repeated until the article reaches the standards of the primary reviewers. Subsequently, all submissions will be reviewed by an appropriate member of the editorial board for a secondary round of feedback. For the third and final stage of review, all faculty advisors will have the opportunity to read the journal in its entirety and provide comments about individual manuscripts and overall structure. These comments will be used to shape the finalized edition of the journal.</p>
+							</section>
+						</div>
+
+					</div>
+
+				</section>
+
+			<!-- Main -->
+				<article id="main">
+
+				</article>
+
+		</div>
+
+		<!-- Footer -->
+		<div id="footer-placeholder"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/header-loader.js"></script>
+			<script src="assets/js/footer-loader.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>

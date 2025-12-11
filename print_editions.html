@@ -1,153 +1,72 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Print Editions</title>
+		<title>Print Editions - WURJ</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/header-styles.css" />
+		<link rel="stylesheet" href="assets/css/footer-styles.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			#header {
-				background-color: #624e5d; 
-			}
-
-			#nav ul li a {
-				color: #fff; 
-			}
-
-			#nav ul li a:hover {
-				text-decoration: underline;
-			}
-			
-			.print-editions-banner {
-				background-color: #624e5d; 
-				padding: 100px 20px;
-				text-align: center;
-				margin: 0;
-			}
-
-			.print-editions-title {
-				font-weight: bold;
-				color: #fff; 
-				font-size: 2.5rem;
-				margin: 60px 0 0 0; 
-			}
-
-			article#main {
-				margin-top: -80px; /* Move content up under the banner */
-			}
-
-			article#main > header.special.container { /* Target direct child */
-				border: none; 
-				padding: 10px 20px 20px 20px; /* Added more top padding for content after banner */
-				/* The background of this container will be the page default (likely light grey pattern) */
-			}
-
-			article#main > header.special.container p {
-    			font-size: 1.2em; 
-    			line-height: 2;  
-			}
-
-			article#main > header.special.container p a {
-    			font-family: inherit;
-				font-size: inherit;  
-				font-weight: inherit;
-			}
-
-			article#main > header.special.container:before,
-			article#main > header.special.container:after {
-				content: none; 
-			}
-
-			body {
-				margin: 0;
-				padding: 0;
-			}
-
-			#page-wrapper {
-				margin: 0;
-				padding: 0;
-			}
-		</style>
 	</head>
-	
-	<body class="no-sidebar is-preload">
+	<body class="index is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header (Standard Site Navigation) -->
-				<header id="header" class="alt"> 
-					<h1 id="logo"><a href="index.html"><img src="images/logo.jpg" alt="" /></a></h1>
-					 <nav id="nav">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="contact_us.html">Contact Us</a></li>
-						<li class="submenu">
-						<a href="#">Menu</a>
-						<ul>
-							<li><a href="board_24_25.html">Current WURJ Board</a></li>
-							<li><a href="affiliations.html">Affiliations</a></li>
-							<li><a href="funding.html">Funding</a></li>
-							<li><a href="guidelines.html">Guidelines</a></li>
-							<li><a href="join.html">Join</a></li>
-							<li><a href="mission.html">Mission</a></li>
-							<li><a href="news.html">News</a></li>
-							<li><a href="submissions.html">Submissions</a></li>
-						</ul>
-						</li>
-					</ul>
-					</nav>
-				</header>
+			<!-- Header -->
+				<div id="header-placeholder"></div>
 
-			<!-- New Purple Banner -->
-			<div class="print-editions-banner">
-				<h2 class="print-editions-title">Print Editions</h2>
-			</div>
+			<!-- Banner -->
+				<section id="banner">
 
-			<!-- Main Content -->
+					<div class="inner">
+
+						<header>
+							<h2>Print Editions</h2>
+						</header>
+						<p>
+						Explore our complete collection of published volumes,
+						<br />
+						featuring outstanding undergraduate research
+						<br />
+						from the Williams community.
+						<br />
+						<br />
+						<a href="pdfs/Vol_5.pdf" target="_blank">Volume V</a>
+						<br/>
+						<a href="pdfs/Vol_4.pdf" target="_blank">Volume IV</a>
+						<br/>
+						<a href="pdfs/Vol_3.pdf" target="_blank">Volume III</a>
+						<br/>
+						<a href="pdfs/Vol_2.pdf" target="_blank">Volume II</a>
+						<br/>
+						<a href="pdfs/Vol_1.pdf" target="_blank">Volume I</a>
+						</p>
+
+					</div>
+
+				</section>
+
+			<!-- Main -->
 				<article id="main">
-					<header class="special container">
-						<!-- The "white box with links" goes inside this container -->
-							<div class="content">
-								<section>
-									<p>
-									<br/><a href="pdfs/Vol_5.pdf">Volume V</a>
-									<br/>
-									<a href="pdfs/Vol_4.pdf">Volume IV</a>
-									<br/>
-									<a href="pdfs/Vol_3.pdf">Volume III</a>
-									<br/>
-									<a href="pdfs/Vol_2.pdf">Volume II</a>
-									<br/>
-									<a href="pdfs/Vol_1.pdf">Volume I</a>
-									</p>
-								</section>
-							</div>
-						</section>
-					</header>
+
 				</article>
 
-
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands circle fa-google-plus-g"><span class="label">Google+</span></a></li>
-						<li><a href="#" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>
-					</ul>
-				</footer>
 		</div>
+
+		<!-- Footer -->
+		<div id="footer-placeholder"></div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/header-loader.js"></script>
+			<script src="assets/js/footer-loader.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
 	</body>
 </html>

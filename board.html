@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>WURJ Board</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/header-styles.css" />
+		<link rel="stylesheet" href="assets/css/footer-styles.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.board-selector {
+				text-align: center;
+				margin: 2em 0;
+			}
+
+			.board-selector label {
+				color: white;
+			}
+
+			.board-selector select {
+				padding: 0.75em 1.5em;
+				font-size: 1em;
+				border-radius: 0.35em;
+				border: 2px solid white;
+				background: rgba(255, 255, 255, 0.1);
+				color: white;
+				cursor: pointer;
+			}
+
+			.board-selector select option {
+				background: #645862;
+				color: white;
+			}
+
+			.board-content {
+				display: none;
+				margin-top: 2em;
+			}
+
+			.board-content.active {
+				display: block;
+			}
+
+			.board-content section {
+				padding: 1em 0;
+			}
+
+			.board-content table {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 20px 0;
+				background: rgba(255, 255, 255, 0.1);
+			}
+
+			.board-content th,
+			.board-content td {
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				padding: 10px;
+				text-align: center;
+				vertical-align: middle;
+				color: white;
+			}
+
+			.board-content th {
+				background-color: rgba(240, 169, 98, 0.3);
+				color: white;
+			}
+
+			.board-content h2 {
+				font-weight: bold;
+				color: white;
+				margin-top: 1.5em;
+			}
+
+			.board-content a {
+				color: #F0A962;
+			}
+
+			.board-content a:hover {
+				color: white;
+			}
+		</style>
+	</head>
+	<body class="index is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-placeholder"></div>
+
+			<!-- Banner -->
+				<section id="banner">
+
+					<div class="inner">
+
+						<header>
+							<h2>WURJ Board</h2>
+						</header>
+						<p>
+						Meet the dedicated team behind
+						<br />
+						Williams Undergraduate Research Journal.
+						<br />
+						<br />
+						</p>
+
+						<!-- Board Selector -->
+						<div class="board-selector">
+							<label for="year-select">Select Year: </label>
+							<select id="year-select" onchange="switchBoard()">
+								<option value="2024-25">2024-25 (Current)</option>
+								<option value="2023-24">2023-24</option>
+								<option value="2022-23">2022-23</option>
+							</select>
+						</div>
+
+						<!-- 2024-25 Board -->
+						<div id="board-2024-25" class="board-content active">
+						<section>
+							<h2>Executive Board</h2>
+							<table>
+								<tr>
+									<th>Role</th>
+									<th>Name</th>
+									<th>Email</th>
+								</tr>
+								<tr>
+									<td>Co-President</td>
+									<td>Alex Cumming, Luke Young-Xu</td>
+									<td><a href="mailto:avc2@williams.edu">avc2@williams.edu</a>, <a href="mailto:lyy1@williams.edu">lyy1@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Secretary/Communications Officer</td>
+									<td>Andy Ju</td>
+									<td><a href="mailto:aaj6@williams.edu">aaj6@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Finance Officer</td>
+									<td>Weiran Jiang, Santiago Christ</td>
+									<td><a href="mailto:wj4@williams.edu">wj4@williams.edu</a>, <a href="mailto:sc43@williams.edu">sc43@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Outreach Officer</td>
+									<td>Alejandra Becerra, Maliha Rashid</td>
+									<td><a href="mailto:aca2@williams.edu">aca2@williams.edu</a>, <a href="mailto:mr33@williams.edu">mr33@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Creative Officer</td>
+									<td>Jess Hu</td>
+									<td><a href="mailto:jhh3@williams.edu">jhh3@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Webmaster</td>
+									<td>Wentian Sun, Tebin Kim</td>
+									<td><a href="mailto:ws13@williams.edu">ws13@williams.edu</a>, <a href="mailto:tk14@williams.edu">tk14@williams.edu</a></td>
+								</tr>
+							</table>
+						</section>
+						<section>
+							<h2>Editorial Board</h2>
+							<table>
+								<tr>
+									<th>Role</th>
+									<th>Name</th>
+									<th>Email</th>
+								</tr>
+								<tr>
+									<td>Editor in Chief</td>
+									<td>Ashley Kim</td>
+									<td><a href="mailto:akk2@williams.edu">akk2@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Managing Editor of Humanities</td>
+									<td>Jake Sokolofsky</td>
+									<td><a href="mailto:js41@williams.edu">js41@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Managing Editor of Social Sciences</td>
+									<td>George Williams</td>
+									<td><a href="mailto:glw5@williams.edu">glw5@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Managing Editor of Design</td>
+									<td>Santiago Christ</td>
+									<td><a href="mailto:sc43@williams.edu">sc43@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Managing Editors of Natural Sciences</td>
+									<td>Shloke Jani, Edward Li, Jazmin Morenzi</td>
+									<td>
+										<a href="mailto:saj7@williams.edu">saj7@williams.edu</a>,
+										<a href="mailto:el13@williams.edu">el13@williams.edu</a>,
+										<a href="mailto:jvm1@williams.edu">jvm1@williams.edu</a>
+									</td>
+								</tr>
+							</table>
+						</section>
+						</div>
+
+						<!-- 2023-24 Board -->
+						<div id="board-2023-24" class="board-content">
+						<section>
+							<h2>Executive Board</h2>
+							<table>
+								<tr>
+									<th>Role</th>
+									<th>Name</th>
+									<th>Email</th>
+								</tr>
+								<tr>
+									<td>President</td>
+									<td>Daniela Galvez-Cepeda</td>
+									<td><a href="mailto:dg18@williams.edu">dg18@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Secretary & Communications Director</td>
+									<td>Edward Li</td>
+									<td><a href="mailto:ell13@williams.edu">ell13@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Finance Officer</td>
+									<td>Weiran Jiang</td>
+									<td><a href="mailto:wj4@williams.edu">wj4@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Outreach & Social Media Manager</td>
+									<td>Alex Cumming</td>
+									<td><a href="mailto:avc2@williams.edu">avc2@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Associate Outreach & Social Media Manager</td>
+									<td>Sam Drescher</td>
+									<td><a href="mailto:srd6@williams.edu">srd6@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Webmaster</td>
+									<td>Luke Young-Xu</td>
+									<td><a href="mailto:lyy1@williams.edu">lyy1@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Associate Webmaster</td>
+									<td>Isabel Santiago</td>
+									<td><a href="mailto:ims1@williams.edu">ims1@williams.edu</a></td>
+								</tr>
+							</table>
+						</section>
+						<section>
+							<h2>Editorial Board</h2>
+							<table>
+								<tr>
+									<th>Role</th>
+									<th>Name</th>
+									<th>Email</th>
+								</tr>
+								<tr>
+									<td>Editor in Chief</td>
+									<td>Tasnim Anika</td>
+									<td><a href="mailto:tka1@williams.edu">tka1@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Managing Editor of STEM</td>
+									<td>Ashley Kim</td>
+									<td><a href="mailto:akk2@williams.edu">akk2@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Associate Managing Editor of STEM</td>
+									<td>Eli Dugan</td>
+									<td><a href="mailto:ebd3@williams.edu">ebd3@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Managing Editor of Humanities</td>
+									<td>Harper Treschuk</td>
+									<td><a href="mailto:hst2@williams.edu">hst2@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Managing Editor of Social Sciences</td>
+									<td>David Wang</td>
+									<td><a href="mailto:dw8@williams.edu">dw8@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Managing Editor of Design</td>
+									<td>Isabel Santiago</td>
+									<td><a href="mailto:ims1@williams.edu">ims1@williams.edu</a></td>
+								</tr>
+							</table>
+						</section>
+						</div>
+
+						<!-- 2022-23 Board -->
+						<div id="board-2022-23" class="board-content">
+						<section>
+							<h2>Executive Board</h2>
+							<table>
+								<tr>
+									<th>Role</th>
+									<th>Name</th>
+									<th>Email</th>
+								</tr>
+								<tr>
+									<td>President</td>
+									<td>Raphael Rakosi-Schmidt</td>
+									<td><a href="mailto:ror1@williams.edu">ror1@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Finance Officer</td>
+									<td>Chloe Moffitt</td>
+									<td><a href="mailto:crm2@williams.edu">crm2@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Communications Director</td>
+									<td>Maxwell Song</td>
+									<td><a href="mailto:mzs1@williams.edu">mzs1@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Outreach Coordinator</td>
+									<td>Destiny Crisp</td>
+									<td><a href="mailto:djc8@williams.edu">djc8@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Webmaster</td>
+									<td>Hazel Richards</td>
+									<td><a href="mailto:hr3@williams.edu">hr3@williams.edu</a></td>
+								</tr>
+							</table>
+						</section>
+						<section>
+							<h2>Editorial Board</h2>
+							<table>
+								<tr>
+									<th>Role</th>
+									<th>Name</th>
+									<th>Email</th>
+								</tr>
+								<tr>
+									<td>Editor in Chief</td>
+									<td>Daniela Galvez-Cepeda</td>
+									<td><a href="mailto:dg18@williams.edu">dg18@williams.edu</a></td>
+								</tr>
+								<tr>
+									<td>Managing Editor of Social Sciences</td>
+									<td>Caitlin Han</td>
+									<td><a href="mailto:ceh8@williams.edu">ceh8@williams.edu</a></td>
+								</tr>
+							</table>
+						</div>
+						</div>
+
+					</div>
+
+				</section>
+
+			<!-- Main -->
+				<article id="main">
+
+				</article>
+
+		</div>
+
+		<!-- Footer -->
+		<div id="footer-placeholder"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/header-loader.js"></script>
+			<script src="assets/js/footer-loader.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				function switchBoard() {
+					// Hide all boards
+					document.querySelectorAll('.board-content').forEach(function(board) {
+						board.classList.remove('active');
+					});
+
+					// Show selected board
+					var selectedYear = document.getElementById('year-select').value;
+					document.getElementById('board-' + selectedYear).classList.add('active');
+				}
+			</script>
+
+	</body>
+</html>

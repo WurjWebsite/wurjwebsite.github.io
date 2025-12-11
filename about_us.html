@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>About Us</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link href="assets/css/header-styles.css" rel="stylesheet"/>
+    <link href="assets/css/footer-styles.css" rel="stylesheet"/>
+    <noscript><link href="assets/css/noscript.css" rel="stylesheet"/></noscript>
+    <style>
+        /* Constrain banner width */
+        #banner .inner {
+            max-width: 65%;
+        }
+
+        /* Section styling */
+        .about-section {
+            margin-top: 3em;
+            text-align: left;
+        }
+
+        .about-section h3 {
+            color: #F0A962;
+            font-size: 1.5rem;
+            margin-bottom: 1em;
+            font-weight: bold;
+        }
+
+        .about-section p {
+            color: white;
+            line-height: 1.8;
+            margin-bottom: 1em;
+        }
+
+        .about-section a {
+            color: #F0A962;
+        }
+
+        .about-section a:hover {
+            color: white;
+        }
+
+        /* Form Styling */
+        .contact-form {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .contact-form button[type="submit"] {
+            background-color: #F0A962;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .contact-form button[type="submit"]:hover {
+            background-color: #d89450;
+        }
+    </style>
+  </head>
+  <body class="index is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <div id="header-placeholder"></div>
+
+      <!-- Banner -->
+      <section id="banner">
+        <div class="inner">
+          <header>
+            <h2>About Us</h2>
+          </header>
+          <p>
+          The primary purpose of WURJ is to provide an accessible publishing platform for Williams students' thesis/honors papers and independent research projects. Additionally, WURJ aims to introduce students to the peer review process in preparation for graduate school, academia, or research oriented careers. In pursuit of this goal, the organization will, by virtue of its status as a solely undergraduate journal, facilitate connections between undergraduate students and faculty at other institutions with whom the organization seeks to build an enduring research network. Finally, it is also the purpose of this organization to abide by the Code of Student Conduct and to uphold the educational mission of Williams College. For more information, please see our <a href="https://docs.google.com/document/d/1JjVQzPC5fKRTqc8DlmPEfVF2OpUSreO1/edit?usp=sharing&ouid=117680648343077471922&rtpof=true&sd=true">2025-2026 constitution</a>.
+          <br />
+          <br />
+          </p>
+          
+          <!-- Join Us Section -->
+          <div class="about-section">
+            <h3>Getting Involved with WURJ</h3>
+            <p>WURJ is always looking for new staff editors, peer reviewers, and graphic designers to join our editorial team.</p>
+            <p>If you're interested in one (or more) of these roles, please reach out to us at <a href="mailto:wurjsocial@gmail.com">wurjsocial@gmail.com</a> for more information or use our Contact Us form above.</p>
+            <p>If you're interested in writing an article for WURJ, please refer to the <a href="submissions.html">submissions page</a> for more information.</p>
+          </div>
+          
+          <!-- Funding Section -->
+          <div class="about-section">
+            <h3>Funding</h3>
+            <p>Core funding for WURJ is provided by the Facilitators for Allocating Student Taxes (FAST), the primary funding body for registered student organizations at Williams College. Go <a href="https://sites.williams.edu/fast/">here</a> to learn more about FAST and view past funding decisions.</p>
+            <p>Additionally, for the 2021-22 academic year, WURJ was awarded an over $4,000 grant to expand access to publication opportunities for underrepresented communities in academia. This grant is part of the Towards Inclusion, Diversity, & Equity (TIDE) program, administered by the College's Office of Institutional Diversity, Equity, and Inclusion. You can navigate <a href="https://docs.google.com/document/d/1p_E7EXHn643gySnEo1zy2WF3uHwt35dpogVmetTcR48/edit?tab=t.0">here</a> to read our grant proposal or <a href="https://diversity.williams.edu/towards-inclusion-diversity-equity-grants/">here</a> for more information on the TIDE grant program.</p>
+            <p>We at WURJ are immensely grateful to the Office of Institutional Diversity, Equity, and Inclusion for supporting our work, and we would like to give a special thanks to Bilal Ansari, Assistant Vice President for Campus Engagement, and to D. Clinton Williams, Director of Pathways for Inclusive Excellence, for their assistance throughout the TIDE grant process.</p>
+          </div>
+          <!-- Contact Section -->
+          <div class="about-section">
+            <h3>Contact Us</h3>
+            <form class="contact-form" action="">
+              <label for="name">Name:</label>
+              <input id="name" name="name" required="" type="text"/>
+              <label for="email">Email:</label>
+              <input id="email" name="email" required="" type="email"/>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Main -->
+      <article id="main">
+      </article>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/header-loader.js"></script>
+    <script src="assets/js/footer-loader.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
