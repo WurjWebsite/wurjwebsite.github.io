@@ -1,0 +1,25 @@
+/* Footer styling */
+#footer {
+	padding: 4em 0 2em 0;
+	text-align: center;
+	background: transparent;
+}
+
+#footer .icons {
+	margin: 0;
+}
+
+#footer .icons li {
+	display: inline-block;
+	margin: 0 0.5em;
+}
+
+#footer .icons a {
+	color: white;
+	border-color: white;
+}
+
+#footer .icons a:hover {
+	color: #F0A962;
+	border-color: #F0A962;
+}

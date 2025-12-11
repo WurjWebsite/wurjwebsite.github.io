@@ -109,7 +109,8 @@ $pattern-background-size: 25em;
 		}
 
 	body {
-		background: _palette(bg);
+		background: url('../../images/background.jpg') no-repeat center center fixed;
+		background-size: cover;
 
 		// Stops initial animations until page loads.
 			&.is-preload {
@@ -969,51 +970,49 @@ $pattern-background-size: 25em;
 	}
 
 	#banner {
-		background-attachment: scroll, scroll, scroll, fixed;
-		background-color: _palette(three, bg);
-		background-image: url('images/light-bl.svg'), url('images/light-br.svg'), url('images/overlay.png'), url('../../images/banner.jpg');
-		background-position: bottom left, bottom right, top left, top center;
-		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
-		background-size: $pattern-background-size, $pattern-background-size, auto, cover;
-		color: _palette(banner, fg);
+		background: none;
 		cursor: default;
-		padding: 6em 0;
+		padding: 8em 0;
 		text-align: center;
 
 		.inner {
 			@include vendor('animation', 'reveal-banner 1s 0.25s ease-in-out');
 			@include vendor('animation-fill-mode', 'forwards');
-			background: transparentize(_palette(banner, inner-bg), 0.5);
-			color: _palette(banner, inner-fg);
+			background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.45) 20%, rgba(0, 0, 0, 0.35) 35%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.15) 65%, rgba(0, 0, 0, 0.08) 80%, rgba(0, 0, 0, 0) 100%);
+			backdrop-filter: blur(5px);
+			-webkit-backdrop-filter: blur(5px);
+			color: rgba(255, 255, 255, 0.9);
 			display: inline-block;
 			opacity: 0;
-			padding: 3em;
+			padding: 5em;
 			text-align: center;
 
 			header {
 				display: inline-block;
-				border-bottom: solid 2px;
-				border-top: solid 2px;
-				margin: 0 0 2em 0;
-				padding: 3px 0 3px 0;
+				border: none;
+				margin: 0 0 1.5em 0;
+				padding: 0;
 
 				h2 {
-					border-bottom: solid 2px;
-					border-top: solid 2px;
-					font-size: 2.5em;
+					border: none;
+					font-size: 5em;
 					font-weight: 900;
 					letter-spacing: 0.2em;
 					margin: 0;
-					padding-left: 0.05em;
+					padding: 0;
 					position: relative;
 					text-transform: uppercase;
+					color: rgba(255, 255, 255, 0.9);
 				}
 			}
 
 			p {
-				letter-spacing: 0.1em;
+				letter-spacing: 0.05em;
 				margin: 0;
-				text-transform: uppercase;
+				text-transform: none;
+				font-size: 1.2em;
+				line-height: 1.6em;
+				color: rgba(255, 255, 255, 0.9);
 
 				a {
 					color: inherit;
