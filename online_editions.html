@@ -9,53 +9,104 @@
 		<link rel="stylesheet" href="assets/css/footer-styles.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
+			/* 1. Page Background */
+			body {
+				/* REPLACE 'your-image.jpg' with your actual image path */
+				background: url('images/background.jpg') no-repeat center center fixed; 
+				background-size: cover;
+			}
+
+			/* 2. Banner: Removing the grey background and the triangle pseudo-elements */
 			.online-editions-banner {
-				background-color: #624e5d;
-				padding: 100px 20px;
+				background-color: transparent !important;
+				padding: 100px 20px 40px 20px;
 				text-align: center;
-				margin: 0;
+				border-bottom: none;
+				position: relative;
+			}
+
+			/* This specific code kills the 'triangle' shape found in many templates */
+			.online-editions-banner:before, 
+			.online-editions-banner:after {
+				display: none !important;
+				content: none !important;
 			}
 
 			.online-editions-title {
-				font-weight: bold;
-				color: #fff;
-				font-size: 2.5rem;
-				margin: 60px 0 0 0;
+				font-weight: 700;
+				color: #fff; /* White text looks better on image backgrounds */
+				text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+				font-size: 3rem;
+				margin: 0;
 			}
 
+			/* 3. Layout and Article Cards */
 			article#main {
-				margin-top: -80px; /* Move content up under the banner */
+				margin-top: 0;
+				padding: 0 10% 100px 10%;
 			}
 
-			article#main > header.special.container {
-				border: none;
-				padding: 10px 20px 20px 20px;
+			.filter-section, .article-card {
+				/* Glassmorphism look so text is readable over the background image */
+				background-color: rgba(255, 255, 255, 0.9); 
+				border: 1px solid #ddd;
+				border-radius: 6px;
+				box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 			}
 
-			article#main > header.special.container p {
-    			font-size: 1.2em;
-    			line-height: 2;
+			.filter-section {
+				padding: 20px;
+				margin-bottom: 30px;
+				text-align: center;
 			}
 
-			article#main > header.special.container p a {
-    			font-family: inherit;
-				font-size: inherit;
-				font-weight: inherit;
+			.filter-section select {
+				padding: 10px;
+				width: 100%;
+				max-width: 450px;
+				border: 1px solid #ccc;
+				cursor: pointer;
 			}
 
-			article#main > header.special.container:before,
-			article#main > header.special.container:after {
-				content: none;
+			.article-card {
+				display: flex;
+				margin-bottom: 25px;
+				padding: 30px;
+				text-align: left;
+				align-items: flex-start;
+				transition: opacity 0.4s ease; /* Smooth transition when filtering */
 			}
 
-			body {
-				margin: 0;
-				padding: 0;
+			/* FIXED IMAGE STYLES */
+			.article-image-placeholder {
+				flex: 0 0 150px; /* Width of the cover */
+				aspect-ratio: 2 / 3; /* Forces a book-like shape */
+				border: 1px solid #eee;
+				background-color: #fafafa;
+				margin-right: 30px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden; /* Keeps image inside the rounded corners */
+				border-radius: 4px;
 			}
 
-			#page-wrapper {
-				margin: 0;
-				padding: 0;
+			.article-image-placeholder img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain; /* Fits entire image in the box */
+				object-position: center;
+			}
+
+			.article-details { flex: 1; }
+			.article-details h3 { margin: 0 0 10px 0; font-size: 1.6rem; }
+			.article-details h3 a { color: #333; text-decoration: underline; }
+			.article-details p { margin: 5px 0; color: #444; line-height: 1.5; }
+			.article-details .meta-data { font-style: italic; color: #777; margin-bottom: 15px; }
+
+			@media screen and (max-width: 736px) {
+				.article-card { flex-direction: column; align-items: center; text-align: center; }
+				.article-image-placeholder { margin-right: 0; margin-bottom: 20px; width: 100%; }
 			}
 		</style>
 	</head>
@@ -63,43 +114,495 @@
 	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header (Standard Site Navigation) -->
-				<div id="header-placeholder"></div>
+			<div id="header-placeholder"></div>
 
-			<!-- New Purple Banner -->
 			<div class="online-editions-banner">
-				<h2 class="online-editions-title">Online Editions</h2>
+				<h2 class="online-editions-title">WURJ Online Edition</h2>
 			</div>
 
-			<!-- Main Content -->
-				<article id="main">
-					<header class="special container">
-						<!-- Content to be added later -->
-							<div class="content">
-								<section>
-									<p>Content coming soon...</p>
-								</section>
-							</div>
-						</section>
-					</header>
-				</article>
+			<article id="main">
+				
+				<!-- Filter Section -->
+				<div class="filter-section">
+					<label for="division-select" style="color: #000; font-weight: bold;">Show Papers from: </label>
+					<select id="division-select">
+						<option value="all">All Divisions / All Papers</option>
+						<option value="div1">Division 1: Arts</option>
+						<option value="div2">Division 2: Humanities</option>
+						<option value="div3">Division 3: STEM</option>
+					</select>
+				</div>
+
+				<!-- 2025 Articles -->
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol5_cover.png" alt="Volume 5 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2025-sonputri.pdf">Small Molecule Stabilization of the CARD11 G-quadruplex Represses Transcription</a></h3>
+						<p><strong>Aarohi Sonputri</strong></p>
+						<p class="meta-data">Sonputri, A. (2025). WURJ Online Edition.</p>
+						<p class="abstract-snippet">This study investigates CARD11 gene silencing as a potential therapeutic for DLBCL by targeting G-quadruplex structures to repress transcription.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol5_cover.png" alt="Volume 5 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2025-wang.pdf">CRISPR-Cas9: A Testament to the Value of Basic Research</a></h3>
+						<p><strong>Ray Wang</strong></p>
+						<p class="meta-data">Wang, R. (2025). WURJ Online Edition.</p>
+						<p class="abstract-snippet">A historical review tracing the development of gene-editing techniques and emphasizing the necessity of basic scientific research.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol5_cover.png" alt="Volume 5 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2025-dar.pdf">From Burma to Bangladesh: Continuous Challenges and Refugee-Empowering Resolutions</a></h3>
+						<p><strong>Emerald Dar</strong></p>
+						<p class="meta-data">Dar, E. (2025). WURJ Online Edition.</p>
+						<p class="abstract-snippet">An analysis of the educational challenges faced by Rohingya children in Kutupalong Refugee Camp and highlights refugee-led campaigns.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol5_cover.png" alt="Volume 5 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2025-kim-superfund.pdf">Superfund at 44: A Policy Puzzle of Environmental Persistence</a></h3>
+						<p><strong>Jessica Kim</strong></p>
+						<p class="meta-data">Kim, J. (2025). WURJ Online Edition.</p>
+						<p class="abstract-snippet">A study on the legislative history and expansion of the CERCLA (Superfund) Act, focusing on interest group dynamics.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div1">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol5_cover.png" alt="Volume 5 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2025-morenzi-brown.pdf">“Flattery Instead of Representation:” Sterling A. Brown’s Frustrations with Black Drama</a></h3>
+						<p><strong>Jazmin Morenzi</strong></p>
+						<p class="meta-data">Morenzi, J. (2025). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Explores Sterling A. Brown’s critical perspectives on Black drama and the industry's failure to move beyond stereotypes.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol5_cover.png" alt="Volume 5 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2025-huckans.pdf">On Strikes and Demonstrations: The Power of Protest in France</a></h3>
+						<p><strong>Thomas Huckans</strong></p>
+						<p class="meta-data">Huckans, T. (2025). WURJ Online Edition.</p>
+						<p class="abstract-snippet">An exploration of French protest culture and citizen perspectives on dissent, government, and civil disobedience.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div1">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol5_cover.png" alt="Volume 5 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2025-xu.pdf">“I Contain Multitudes”: The Modern Making of Beat Poet Allen Ginsberg</a></h3>
+						<p><strong>Austina Xu</strong></p>
+						<p class="meta-data">Xu, A. (2025). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Investigates how modernist Imagism and New Criticism influenced the development of Beat poet Allen Ginsberg.</p>
+					</div>
+				</div>
+
+				<!-- 2024 Articles -->
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol4_cover.png" alt="Volume 4 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2024-cumming.pdf">Investigating the Kinetics and Regioselectivity of a 1,3-dipolar Cycloaddition</a></h3>
+						<p><strong>Alex Cumming</strong></p>
+						<p class="meta-data">Cumming, A. (2024). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Investigates substituent effects on the rate of 1,3-dipolar additions using NMR spectroscopy and computational orbital analysis.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol4_cover.png" alt="Volume 4 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2024-kim-health.pdf">Exploring Health Behaviors on Campus: Resting and Eating Habits</a></h3>
+						<p><strong>Ashley Kim</strong></p>
+						<p class="meta-data">Kim, A. (2024). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Examines the correlation between sleep habits, dietary choices, and self-satisfaction among college students.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol4_cover.png" alt="Volume 4 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2024-sadykova.pdf">Sustainable Retirement Investments: Shifting Paradigms at Williams College</a></h3>
+						<p><strong>Diliara Sadykova</strong></p>
+						<p class="meta-data">Sadykova, D. (2024). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Provides a strategic plan for integrating ESG retirement funds at Williams College to align investments with sustainability goals.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol4_cover.png" alt="Volume 4 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2024-safai.pdf">Analyzing the Factors Affecting the Incidence of Foreign Direct Investment (FDI)</a></h3>
+						<p><strong>Dylan Safai, Nelson Del Tufo, Dylan Mealey</strong></p>
+						<p class="meta-data">Safai, D. et al. (2024). WURJ Online Edition.</p>
+						<p class="abstract-snippet">An empirical analysis identifying indicators and factors, such as GDP and historical political context, that affect global FDI inflows.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol4_cover.png" alt="Volume 4 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2024-cheng.pdf">National Hypocrisy: Implications of Wartime Values at Home During the Asia-Pacific War</a></h3>
+						<p><strong>Elizabeth Cheng</strong></p>
+						<p class="meta-data">Cheng, E. (2024). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Explores how the rhetoric of wartime values exposed and exacerbated socio-economic and racial inequalities in both the U.S. and Japan.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div1">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol4_cover.png" alt="Volume 4 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2024-morenzi.pdf">Third World Women: Recontextualizing the Feminist Movement</a></h3>
+						<p><strong>Jazmin Morenzi</strong></p>
+						<p class="meta-data">Morenzi, J. (2024). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Explores how the 1972 anthology "Third World Women" reclaimed the term to build solidarity among women of color in the feminist movement.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol4_cover.png" alt="Volume 4 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2024-flynn.pdf">Identifying the Most Practical Method for Accessing the Deep Martian Subsurface</a></h3>
+						<p><strong>Li-Norah Flynn</strong></p>
+						<p class="meta-data">Flynn, L. (2024). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Evaluates various methods for accessing deep Martian subsurface to search for biosignatures, focusing on feasibility and planet-protection.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol4_cover.png" alt="Volume 4 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2024-neugarten.pdf">The Siege of Fort Massachusetts</a></h3>
+						<p><strong>Sally Neugarten</strong></p>
+						<p class="meta-data">Neugarten, S. (2024). WURJ Online Edition.</p>
+						<p class="abstract-snippet">A historical discussion of the circumstances surrounding the 1746 siege of Fort Massachusetts and the complex relations with indigenous tribes.</p>
+					</div>
+				</div>
+
+				<!-- 2023 Articles -->
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol3_cover.png" alt="Volume 3 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2023-mason.pdf">Closeted Country: Popular Understandings and Political Discourse of Queer History in the American West</a></h3>
+						<p><strong>Cole Mason</strong></p>
+						<p class="meta-data">Mason, C. (2023). WURJ Online Edition.</p>
+						<p class="abstract-snippet">An analysis of the popular and political reception of queer Western history, focusing on 'Out West,' gay rodeo, and the Charley Parkhurst story.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol3_cover.png" alt="Volume 3 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2023-galvez-cepeda.pdf">How Can Children Learn Math Better?</a></h3>
+						<p><strong>Daniela Galvez-Cepeda</strong></p>
+						<p class="meta-data">Galvez-Cepeda, D. (2023). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Explores the impact of math anxiety, parental stereotypes, and educational environments on children's mathematical learning and self-efficacy.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div1">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol3_cover.png" alt="Volume 3 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2023-lynch.pdf">Dialogical Construction of Goddess Worship: Locating 1980s Religious Movements in the Environmental Movement</a></h3>
+						<p><strong>Lauren Lynch</strong></p>
+						<p class="meta-data">Lynch, L. (2023). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Analyzes the language of 1980s environmentalists to understand how the construction of 'Goddess worship' shaped boundaries within the environmental movement.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div1">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol3_cover.png" alt="Volume 3 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2023-morrison.pdf">Double-Faced Wagers: Exchange Coffeehouses in Post-Revolution England</a></h3>
+						<p><strong>Wes Morrison</strong></p>
+						<p class="meta-data">Morrison, W. (2023). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Examines the role of London coffeehouses in the Financial Revolution and challenges the Habermasian notion of the coffeehouse as a purely democratic space.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol3_cover.png" alt="Volume 3 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2023-beeli.pdf">Green Gold and Silver Cities: Gregory Mason, 20th Century Maya Archaeology, and United States Imperialism in Central America</a></h3>
+						<p><strong>Peyton Beeli</strong></p>
+						<p class="meta-data">Beeli, P. (2023). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Explores how Maya archaeology was utilized to justify and entrench United States economic and intellectual imperialism in the Yucatan Peninsula.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol3_cover.png" alt="Volume 3 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2023-sangare.pdf">Investigation of Mechanisms Mediating Microbial Survival, Abundance, and Pathogenicity Within Gut Microbiota</a></h3>
+						<p><strong>AbuBakr Sangare</strong></p>
+						<p class="meta-data">Sangare, A. (2023). WURJ Online Edition.</p>
+						<p class="abstract-snippet">A study proposal investigating population dynamics and microbial mimicry as mechanisms for bacterial survival and their potential link to Multiple Sclerosis.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol3_cover.png" alt="Volume 3 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2023-stillman.pdf">Nuclear Estrogen Receptor ERα may not be Involved in Estradiol (E2) Induced Heart Valve Malformations</a></h3>
+						<p><strong>Hannah Stillman</strong></p>
+						<p class="meta-data">Stillman, H. (2023). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Investigates whether estrogen-induced heart valve abnormalities in zebrafish are mediated through the ERα receptor, finding evidence that alternative pathways may be involved.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol3_cover.png" alt="Volume 3 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2023-masese.pdf">The Importance of Gut Microbiome in the Modulation of Depression</a></h3>
+						<p><strong>Cynthia Masese</strong></p>
+						<p class="meta-data">Masese, C. (2023). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Presents evidence from association and causal studies establishing the gut microbiome as a necessary component in the modulation of depression.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div1">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol3_cover.png" alt="Volume 3 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2023-donis.pdf">My People: The Visual Origins and Viral Spectacle of Black Suffering in Digital Culture</a></h3>
+						<p><strong>Kimberlean Donis</strong></p>
+						<p class="meta-data">Donis, K. (2023). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Explores the intersection of Black visual culture and digital landscapes, examining how contemporary technologies replicate the visual tradition of Black suffering.</p>
+					</div>
+				</div>
+
+				<!-- 2022 Articles -->
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol2_cover.png" alt="Volume 2 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2022-bahl.pdf">Out of the Frying Pan, Into the Fire: An Evaluation of the Role of Human Agency in Romania’s Shift From Fascism to Communism in the Mid 20th Century</a></h3>
+						<p><strong>Utsav Bahl</strong></p>
+						<p class="meta-data">Bahl, U. (2022). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Challenges revisionist arguments on Romanian historiography, arguing that King Michael I and British Clandestine actions shaped the nation's fate.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol2_cover.png" alt="Volume 2 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2022-kotapati.pdf">Closing the Educational Gender Gap in Ethiopia: Perspectives from Behavioral Economics</a></h3>
+						<p><strong>Surya Kotapati</strong></p>
+						<p class="meta-data">Kotapati, S. (2022). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Proposes a two-pronged behavioral intervention to mitigate the attrition of female students in Ethiopia using status quo bias and loss aversion.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol2_cover.png" alt="Volume 2 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2022-case.pdf">Always Leave Them Wanting More: Business in the Age of Scrolling, Reacting, and Posting</a></h3>
+						<p><strong>Caroline Case</strong></p>
+						<p class="meta-data">Case, C. (2022). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Analyzes how social media platforms exploit human patterns of attention and dopamine reward systems for advertising revenue.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol2_cover.png" alt="Volume 2 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2022-malhotra.pdf">Islamist Education: American-Funded Textbooks In Afghanistan</a></h3>
+						<p><strong>Niko Malhotra</strong></p>
+						<p class="meta-data">Malhotra, N. (2022). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Examines how American-funded textbooks used during the Soviet-Afghan war promoted radical Islamist ideology and militant rhetoric.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol2_cover.png" alt="Volume 2 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2022-nair.pdf">The Promise of Psilocybin: Psilocybin as a Treatment Modality for Depression</a></h3>
+						<p><strong>Mukund Nair</strong></p>
+						<p class="meta-data">Nair, M. (2022). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Reviews current treatments for depression and explores the potential of psilocybin-assisted psychotherapy as a novel therapeutic modality.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol2_cover.png" alt="Volume 2 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2022-tamarchenko.pdf">The Effect of School Funding Inequality on Student Achievement Using Causal Inference Methods</a></h3>
+						<p><strong>Elijah Tamarchenko</strong></p>
+						<p class="meta-data">Tamarchenko, E. (2022). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Utilizes causal inference methods to argue that below-average school funding is a direct cause of lower student proficiency as measured by the MCAS.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol2_cover.png" alt="Volume 2 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2022-chilcoat.pdf">Human Exposure to Bisphenol A From Landfill Leachate-Contaminated Water</a></h3>
+						<p><strong>Gwyneth Chilcoat</strong></p>
+						<p class="meta-data">Chilcoat, G. (2022). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Examines the pathway from landfill to drinking water contamination by bisphenol A (BPA) and analyzes the potential human health effects.</p>
+					</div>
+				</div>
+
+				<!-- 2021 Articles -->
+				<div class="article-card" data-division="div1">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol1_cover.png" alt="Volume 1 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2021-ward.pdf">Understanding Keith Haring Through the World of Ancient Greek Revelry</a></h3>
+						<p><strong>Benjamin Ward</strong></p>
+						<p class="meta-data">Ward, B. (2021). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Explores the connection between the art of ancient Greece and Keith Haring's style, highlighting the theme of dance and movement.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol1_cover.png" alt="Volume 1 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2021-rakosi-schmidt.pdf">The New “New Age” of Magic Mushrooms</a></h3>
+						<p><strong>Raphael Rakosi-Schmidt</strong></p>
+						<p class="meta-data">Rakosi-Schmidt, R. (2021). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Reviews the neurobiological effects of psilocybin and its potential as a therapeutic for depression, anxiety, and substance use disorders.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol1_cover.png" alt="Volume 1 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2021-nordmeyer-pham.pdf">Digestible Solutions: A Review of Post-Consumer Food Waste at Williams College</a></h3>
+						<p><strong>Gus Nordmeyer, True Pham</strong></p>
+						<p class="meta-data">Nordmeyer, G., & Pham, T. (2021). WURJ Online Edition.</p>
+						<p class="abstract-snippet">A survey-based report analyzing student dining habits and food waste to recommend improvements for campus sustainability.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div3">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol1_cover.png" alt="Volume 1 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2021-alagar-kuwaye-roff.pdf">Methods to Enhance Mechanical Properties of Cementitious Composites: Innovations at the Nanoscale for Humanitarian Impact</a></h3>
+						<p><strong>Jaya Alagar, Emily Kuwaye, Amanda Roff</strong></p>
+						<p class="meta-data">Alagar, J. et al. (2021). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Reviews nanomaterial additives to enhance geopolymer cement composites, suggesting applications for sustainable construction and homeless shelter design.</p>
+					</div>
+				</div>
+
+				<div class="article-card" data-division="div2">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol1_cover.png" alt="Volume 1 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="article-details">
+						<h3><a href="pdfs/2021-thorpe.pdf">What Do We Want from a Theory of Global Justice?</a></h3>
+						<p><strong>Sam Thorpe</strong></p>
+						<p class="meta-data">Thorpe, S. (2021). WURJ Online Edition.</p>
+						<p class="abstract-snippet">Analyzes critiques of theories of global justice and argues for the necessity of a global deliberative framework in an integrated world.</p>
+					</div>
+				</div>
+
+			</article>
 
 		</div>
 
-		<!-- Footer -->
 		<div id="footer-placeholder"></div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/header-loader.js"></script>
-			<script src="assets/js/footer-loader.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				$('#division-select').on('change', function() {
+					var selectedValue = $(this).val();
+					
+					if (selectedValue === "all") {
+						$('.article-card').fadeIn();
+					} else {
+						$('.article-card').hide();
+						$('.article-card[data-division="' + selectedValue + '"]').fadeIn();
+					}
+				});
+			});
+		</script>
+
+		<script src="assets/js/header-loader.js"></script>
+		<script src="assets/js/footer-loader.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollgress.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
