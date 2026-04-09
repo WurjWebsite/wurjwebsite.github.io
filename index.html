@@ -1,4 +1,3 @@
-<!-- To Do: Get Logo to work, add articles -->
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -9,6 +8,25 @@
 		<link rel="stylesheet" href="assets/css/header-styles.css" />
 		<link rel="stylesheet" href="assets/css/footer-styles.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<style>
+			/* Move the buttons closer to the banner */
+			#main .wrapper {
+				padding-top: 1px !important; /* Reduce this value to move closer, increase to move further */
+			}
+
+			/* Adjusts the space between the buttons themselves */
+			.buttons {
+				display: flex;
+				justify-content: center;
+				gap: 15px; /* Adjust this value to set the gap between the two buttons */
+				padding: 0;
+			}
+			
+			.buttons li {
+				margin: 0 !important;
+			}
+		</style>
 	</head>
 	<body class="index is-preload">
 		<div id="page-wrapper">
@@ -48,7 +66,7 @@
 					<section class="wrapper style1 container special">
 						<ul class="buttons">
 							<li><a href="print_editions.html" class="button primary">Print Editions</a></li>
-							<li><a href="print_editions.html" class="button primary">Online Editions</a></li>
+							<li><a href="online_editions.html" class="button primary">Online Editions</a></li>
 						</ul>
 					</section>
 
@@ -65,6 +83,7 @@
 			<script src="assets/js/footer-loader.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>

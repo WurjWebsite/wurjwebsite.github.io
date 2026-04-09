@@ -8,48 +8,197 @@
 		<link rel="stylesheet" href="assets/css/header-styles.css" />
 		<link rel="stylesheet" href="assets/css/footer-styles.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* 1. Page Background - Using the previous image */
+			body {
+				background: url('images/background.jpg') no-repeat center center fixed; 
+				background-size: cover;
+				margin: 0;
+				padding: 0;
+			}
+
+			/* 2. Banner: Removing the grey background and the decorative triangles */
+			.print-editions-banner {
+				background-color: transparent !important;
+				padding: 100px 20px 40px 20px;
+				text-align: center;
+				border-bottom: none !important;
+				position: relative;
+			}
+
+			/* This kills the grey triangle shapes found in the 'Alpha' template */
+			.print-editions-banner:before, 
+			.print-editions-banner:after {
+				display: none !important;
+				content: none !important;
+			}
+
+			.print-editions-title {
+				font-weight: 700;
+				color: #fff;
+				text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+				font-size: 3rem;
+				margin: 0;
+			}
+
+			/* 3. Main Layout Area */
+			article#main {
+				margin-top: 0;
+				padding: 0 10% 100px 10%;
+			}
+
+			/* 4. Print Edition Cards (The layout from your drawing) */
+			.print-card {
+				display: flex;
+				/* Glassmorphism effect: white semi-transparent background */
+				background-color: rgba(255, 255, 255, 0.9); 
+				border: 1px solid #ddd;
+				margin-bottom: 30px;
+				padding: 30px;
+				align-items: flex-start;
+				border-radius: 6px;
+				box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+				transition: transform 0.2s ease;
+			}
+
+			.print-card:hover {
+				transform: translateY(-3px);
+			}
+
+			/* Left Side: Cover Image Box */
+			/* FIXED IMAGE STYLES */
+			.article-image-placeholder {
+				flex: 0 0 150px; /* Width of the cover */
+				aspect-ratio: 2 / 3; /* Forces a book-like shape */
+				border: 1px solid #eee;
+				background-color: #fafafa;
+				margin-right: 30px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden; /* Keeps image inside the rounded corners */
+				border-radius: 4px;
+			}
+
+			.article-image-placeholder img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain; /* Ensures image fills the aspect ratio */
+				object-position: center;
+			}
+
+			/* Right Side: Text Content */
+			.print-details {
+				flex: 1;
+			}
+
+			.print-details h3 {
+				margin: 0 0 15px 0;
+				font-size: 1.8rem;
+			}
+
+			.print-details h3 a {
+				color: #222;
+				text-decoration: underline;
+				border-bottom: none;
+			}
+
+			.print-details p {
+				color: #444;
+				font-size: 1.15rem;
+				line-height: 1.6;
+				margin-bottom: 0;
+			}
+
+			/* 5. Responsive Design for Mobile */
+			@media screen and (max-width: 840px) {
+				.print-card {
+					flex-direction: column;
+					align-items: center;
+					text-align: center;
+				}
+				.cover-image-placeholder {
+					margin-right: 0;
+					margin-bottom: 25px;
+					width: 100%;
+					max-width: 220px;
+				}
+				article#main {
+					padding: 0 5%;
+				}
+			}
+		</style>
 	</head>
-	<body class="index is-preload">
+	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header-placeholder"></div>
+			<!-- Header (Standard Site Navigation) -->
+			<div id="header-placeholder"></div>
 
-			<!-- Banner -->
-				<section id="banner">
+			<!-- Title Section -->
+			<div class="online-editions-banner print-editions-banner">
+				<h2 class="print-editions-title">Print Editions</h2>
+			</div>
 
-					<div class="inner">
+			<!-- Main Content -->
+			<article id="main">
 
-						<header>
-							<h2>Print Editions</h2>
-						</header>
-						<p>
-						Explore our complete collection of published volumes,
-						<br />
-						featuring outstanding undergraduate research
-						<br />
-						from the Williams community.
-						<br />
-						<br />
-						<a href="pdfs/Vol_5.pdf" target="_blank">Volume V</a>
-						<br/>
-						<a href="pdfs/Vol_4.pdf" target="_blank">Volume IV</a>
-						<br/>
-						<a href="pdfs/Vol_3.pdf" target="_blank">Volume III</a>
-						<br/>
-						<a href="pdfs/Vol_2.pdf" target="_blank">Volume II</a>
-						<br/>
-						<a href="pdfs/Vol_1.pdf" target="_blank">Volume I</a>
-						</p>
-
+				<!-- Volume 5 Card -->
+				<div class="print-card">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol5_cover.png" alt="Volume 5 Cover" style="width:100%; height:100%; object-fit:contain;">
 					</div>
+					<div class="print-details">
+						<h3><a href="pdfs/Vol_5.pdf" target="_blank">Volume 5</a></h3>
+						<p>Blurb</p>
+					</div>
+				</div>
 
-				</section>
+				<!-- Volume 4 Card -->
+				<div class="print-card">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol4_cover.png" alt="Volume 4 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="print-details">
+						<h3><a href="pdfs/Vol_4.pdf" target="_blank">Volume 4</a></h3>
+						<p>...</p>
+					</div>
+				</div>
 
-			<!-- Main -->
-				<article id="main">
+				<!-- Volume 3 Card -->
+				<div class="print-card">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol3_cover.png" alt="Volume 3 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="print-details">
+						<h3><a href="pdfs/Vol_3.pdf" target="_blank">Volume 3</a></h3>
+						<p>...</p>
+					</div>
+				</div>
 
-				</article>
+				<!-- Volume 2 Card -->
+				<div class="print-card">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol2_cover.png" alt="Volume 2 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="print-details">
+						<h3><a href="pdfs/Vol_2.pdf" target="_blank">Volume 2</a></h3>
+						<p>...</p>
+					</div>
+				</div>
+
+				<!-- Volume 1 Card -->
+				<div class="print-card">
+					<div class="article-image-placeholder">
+						<img src="pdfs/vol1_cover.png" alt="Volume 1 Cover" style="width:100%; height:100%; object-fit:contain;">
+					</div>
+					<div class="print-details">
+						<h3><a href="pdfs/Vol_1.pdf" target="_blank">Volume 1</a></h3>
+						<p>...</p>
+					</div>
+				</div>
+
+			</article>
 
 		</div>
 
@@ -57,16 +206,17 @@
 		<div id="footer-placeholder"></div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/header-loader.js"></script>
-			<script src="assets/js/footer-loader.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/header-loader.js"></script>
+		<script src="assets/js/footer-loader.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollgress.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
