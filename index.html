@@ -3,27 +3,42 @@
 	<head>
 		<title>WURJ</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/header-styles.css" />
 		<link rel="stylesheet" href="assets/css/footer-styles.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		
 		<style>
-			/* Move the buttons closer to the banner */
+			/* Wrapper: Ensures the container centers its contents */
 			#main .wrapper {
-				padding-top: 1px !important; /* Reduce this value to move closer, increase to move further */
+				padding-top: 1px !important; 
+				text-align: center;
 			}
 
-			/* Adjusts the space between the buttons themselves */
+			/* .buttons: Centers the list and stacks buttons vertically */
 			.buttons {
-				display: flex;
-				justify-content: center;
-				gap: 15px; /* Adjust this value to set the gap between the two buttons */
-				padding: 0;
+				display: inline-flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 20px;
+				padding: 0 !important;
+				margin: 0 auto !important;
+				list-style: none;
 			}
 			
+			/* List items: Ensures no extra spacing */
 			.buttons li {
+				margin: 0 !important;
+				padding: 0 !important;
+				display: block;
+			}
+
+			/* Buttons: Forces uniform width and center alignment */
+			.buttons li a {
+				display: block !important;
+				width: 250px !important;
+				text-align: center;
 				margin: 0 !important;
 			}
 		</style>
@@ -36,28 +51,18 @@
 
 			<!-- Banner -->
 				<section id="banner">
-
-					<!--
-						".inner" is set up as an inline-block so it automatically expands
-						in both directions to fit whatever's inside it. This means it won't
-						automatically wrap lines, so be sure to use line breaks where
-						appropriate (<br />).
-					-->
 					<div class="inner">
-
 						<header>
 							<h2>WURJ</h2>
 						</header>
 						<p>
-						Williams’ premier platform for highlighting exceptional
+						Williams Undergraduate Research Journal
 						<br />
-						undergraduate work in the hard sciences, mathematics,
+						Williams’ student-run journal dedicated to 
 						<br />
-						social sciences, and humanities.
+						publishing and promoting undergraduate research across disciplines
 						</p>
-
 					</div>
-
 				</section>
 
 			<!-- Main -->
